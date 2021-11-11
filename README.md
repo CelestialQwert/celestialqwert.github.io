@@ -1,2 +1,2 @@
-# cosmicqwert.github.io
+# celestialqwert.github.io
 WOBSITE
