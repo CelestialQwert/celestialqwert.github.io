@@ -1,4 +1,53 @@
 <html>
-	<title>test prime checker pls ignore</title>
-	<body>test primer pls ignore</body>
+<head>
+<title>test prime checker pls ignore</title>
+<script>
+    function check(){
+        document.getElementById("results").innerHTML = ""
+        finalScore = 0;
+        fullScore = document.getElementById("score").value;
+        while(fullScore > 0){
+            if (isPrime(fullScore)){
+                document.getElementById("results").innerHTML += fullScore + " is Prime!<br/>";
+                break;
+            } else {
+                document.getElementById("results").innerHTML += fullScore + " is Not Prime!<br/>";
+            }
+            fullScore = Math.floor(fullScore / 10);
+        }
+        document.getElementById("results").innerHTML += "<br/>Final Score: " + fullScore
+    }
+    function check_one(thisScore){
+            
+    }
+    function isPrime(num) {
+        for(var i = 2; i < Math.max(Math.sqrt(num), 4); i++)
+            if(num % i === 0) return false;
+        return num > 1;
+}
+</script>
+</head>
+
+<body>
+<h3> Test Prime Check Please Ignore</h3>
+Enter your score: <input type="text" id="score" value="42">
+<br/><br/>
+<button id="check" onclick="check()">Check!</button>
+<br/><br/>
+Results
+<p id="results"></p>
+
+</body>
+<script>
+// Execute a function when the user releases a key on the keyboard
+document.getElementById("score").addEventListener("keydown", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    check();
+  }
+});
+</script>
 </html>
